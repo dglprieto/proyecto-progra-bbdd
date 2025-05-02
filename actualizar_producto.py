@@ -4,7 +4,7 @@ import os
 from sqlalchemy import create_engine
 
 def actualizar_producto():
-    basedir = os.path.abspath(os.path.dirname(_file_))
+    basedir = os.path.abspath(os.path.dirname(__file__))
 
     engine = create_engine(
         "sqlite:///" + os.path.join(basedir, 'catalogo.db'),
@@ -14,7 +14,7 @@ def actualizar_producto():
         echo=True
     )
 
-    if _name_ == '_main_':
+    if __name__ == '_main_':
         Session = sessionmaker(bind=engine)
         session = Session()
 
@@ -35,4 +35,3 @@ def actualizar_producto():
         else:
             print("❌ Producto no encontrado.")
 
-    session.close()

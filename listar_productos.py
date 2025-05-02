@@ -4,7 +4,7 @@ import os
 from sqlalchemy import create_engine
 
 def listar_producto():
-    basedir = os.path.abspath(os.path.dirname(_file_))
+    basedir = os.path.abspath(os.path.dirname(__file__))
 
     engine = create_engine(
     "sqlite:///" + os.path.join(basedir, 'catalogo.db'),
@@ -14,13 +14,13 @@ def listar_producto():
     echo=True
     )
 
-    if _name_ == '_main_':
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    if __name__ == '_main_':
+        Session = sessionmaker(bind=engine)
+        session = Session()
 
-    productos = session.query(Producto).all()
+        productos = session.query(Producto).all()
 
-    for producto in productos:
-        print(f"ID: {producto.id} | Nombre: {producto.nombre} | Descripción: {producto.descripcion} | Cantidad: {producto.cantidad}")
+        for producto in productos:
+            print(f"ID: {producto.id} | Nombre: {producto.nombre} | Descripción: {producto.descripcion} | Cantidad: {producto.cantidad}")
 
-    session.close()
+        session.close()

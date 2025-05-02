@@ -4,7 +4,7 @@ import os
 from sqlalchemy import create_engine
 
 def eliminar_producto():
-    basedir = os.path.abspath(os.path.dirname(_file_))
+    basedir = os.path.abspath(os.path.dirname(__file__))
 
     engine = create_engine(
         "sqlite:///" + os.path.join(basedir, 'catalogo.db'),
@@ -23,8 +23,8 @@ def eliminar_producto():
     if producto:
         session.delete(producto)
         session.commit()
-        print("🗑️ Producto eliminado correctamente.")
+        print("Producto eliminado correctamente.")
     else:
-        print("❌ Producto no encontrado.")
+        print(" Producto no encontrado.")
 
     session.close()
