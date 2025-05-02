@@ -1,4 +1,7 @@
-import os
+from crud.insertar_producto import insertar_producto
+from crud.listar_productos import listar_producto
+from crud.actualizar_producto import actualizar_producto
+from crud.eliminar_producto import eliminar_producto
 
 if __name__ == '__main__':
     while True:
@@ -12,15 +15,15 @@ if __name__ == '__main__':
         opcion = input("Elige una opción: ")
 
         if opcion == '1':
-            os.system('python3 ddbb/insertar_producto.py')
+            insertar_producto()
         elif opcion == '2':
-            os.system('python3 ddbb/listar_productos.py')
+            listar_producto()
         elif opcion == '3':
-            os.system('python3 ddbb/actualizar_producto.py')
+            actualizar_producto()
         elif opcion == '4':
-            os.system('python3 ddbb/eliminar_producto.py')
+            eliminar_producto()
         elif opcion == '5':
-            print("👋 Saliendo...")
+            print("Saliendo...")
             break
         else:
-            print("❌ Opción no válida.")
+            print("Opción no válida.")
