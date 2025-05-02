@@ -1,7 +1,7 @@
-from crud.insertar_producto import insertar_producto
-from crud.listar_productos import listar_producto
-from crud.actualizar_producto import actualizar_producto
-from crud.eliminar_producto import eliminar_producto
+from insertar_producto import insertar_producto
+from listar_productos import listar_producto
+from actualizar_producto import actualizar_producto
+from eliminar_producto import eliminar_producto
 
 if __name__ == '__main__':
     while True:

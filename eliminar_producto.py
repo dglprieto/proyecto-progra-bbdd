@@ -1,4 +1,4 @@
-from ddbb.catalogo import *
+from catalogo import *
 from sqlalchemy.orm import sessionmaker
 import os
 from sqlalchemy import create_engine

@@ -1,4 +1,4 @@
-from ddbb.catalogo import *
+from catalogo import *
 from sqlalchemy.orm import sessionmaker
 import os
 from sqlalchemy import create_engine
@@ -14,14 +14,13 @@ def actualizar_producto():
         echo=True
     )
 
-    if __name__ == '_main_':
-        Session = sessionmaker(bind=engine)
-        session = Session()
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-        id_producto = int(input("Introduce el ID del producto que quieres actualizar: "))
-        producto = session.query(Producto).get(id_producto)
+    id_producto = int(input("Introduce el ID del producto que quieres actualizar: "))
+    producto = session.query(Producto).get(id_producto)
 
-        if producto:
+    if producto:
             nuevo_nombre = input("Introduce el nuevo nombre: ")
             nueva_descripcion = input("Introduce la nueva descripción: ")
             nueva_cantidad = int(input("Introduce la nueva cantidad: "))
@@ -32,6 +31,6 @@ def actualizar_producto():
 
             session.commit()
             print("✅ Producto actualizado correctamente.")
-        else:
+    else:
             print("❌ Producto no encontrado.")
 
