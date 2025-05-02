@@ -3,6 +3,7 @@ from sqlalchemy.orm import sessionmaker
 import os
 from sqlalchemy import create_engine
 
+def actualizar_producto():
     basedir = os.path.abspath(os.path.dirname(_file_))
 
     engine = create_engine(
