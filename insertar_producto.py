@@ -3,10 +3,10 @@ from sqlalchemy.orm import sessionmaker
 import os
 from sqlalchemy import create_engine
 
+def insertar_producto():
+    basedir = os.path.abspath(os.path.dirname(_file_))
 
-basedir = os.path.abspath(os.path.dirname(_file_))
-
-engine = create_engine(
+    engine = create_engine(
     "sqlite:///" + os.path.join(basedir, 'catalogo.db'),
     pool_size=5,
     max_overflow=10,
@@ -14,7 +14,7 @@ engine = create_engine(
     echo=True
 )
 
-if _name_ == '_main_':
+    if _name_ == '_main_':
 
     Session = sessionmaker(bind=engine)
 
